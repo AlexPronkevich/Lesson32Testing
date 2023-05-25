@@ -34,12 +34,15 @@
 #                 f"vitamin = {self.__vitamin}, "
 #                 f"cost = {self.__cost}")
 
+from entity.product import Product
 
-class Milk:
+
+class Milk(Product):
     def __init__(self, volume=0, fat=0, money=0):
+        super().__init__(money)
         self.__volume = volume
         self.__fat = fat
-        self.__money = money
+        # self.__money = money
 
     @property
     def volume(self):
@@ -49,9 +52,9 @@ class Milk:
     def fat(self):
         return self.__fat
 
-    @property
-    def money(self):
-        return self.__money
+    # @property
+    # def money(self):
+    #     return self.__money
 
     @volume.setter
     def volume(self):
@@ -61,11 +64,11 @@ class Milk:
     def fat(self, fat):
         self.__fat = fat
 
-    @money.setter
-    def money(self, money):
-        self.__money = money
+    # @money.setter
+    # def money(self, money):
+    #     self.__money = money
 
     def __str__(self):
         return (f"Milk: volume = {self.__volume}, "
                 f"fat = {self.__fat}, "
-                f"money = ${self.__money}")
+                f"money = ${self.price}")

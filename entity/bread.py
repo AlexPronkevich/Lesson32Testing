@@ -106,4 +106,3 @@ class Bread(Product):
         return (f"Bread: color = {self.__color}, "
                 f"flour = {self.__flour}, "
                 f"price = ${self.price}")
-
