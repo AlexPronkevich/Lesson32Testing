@@ -1,25 +1,30 @@
+# Version 1.0
+# Author: Pronkevich Alexandra
+# Group: QA2022
+# Date: 28.05.2023
+
 import unittest
-from entity.orange import Orange
+from entity.rose import Rose
 
 
-class OrangeTest(unittest.TestCase):
-    def test_orange_default_constructor(self):
-        orange = Orange()
-        expected_diameter = 100
-        expected_vitamin = 1000
-        expected_cost = 0
+class RoseTest(unittest.TestCase):
+    def test_rose_default_constructor(self):
+        rose = Rose()
+        expected_color = "white"
+        expected_weight = 1
+        expected_price = 0
 
-        self.assertEqual(expected_diameter, orange.diameter)
-        self.assertEqual(expected_vitamin, orange.vitamin)
-        self.assertEqual(expected_cost, orange.price)
+        self.assertEqual(expected_color, rose.color)
+        self.assertEqual(expected_weight, rose.weight)
+        self.assertEqual(expected_price, rose.price)
 
-    def test_negative_orange_diameter(self):
-        diameter = -200
-        expected = 1000
+    def test_negative_rose_diameter(self):
+        weight = -200
+        eexpected = 1000
 
-        orange = Orange(vitamin=vitamin)
+        rose = Rose(weight=weight)
 
-        self.assertEqual(expected, orange.vitamin)
+        self.assertEqual(expected, rose.weight)
 
     # def test_negative_orange_cost(self):
     #     price = -200

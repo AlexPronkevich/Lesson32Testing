@@ -1,33 +1,38 @@
-from entity.milk import Milk
-from entity.orange import Orange
-from entity.bread import Bread
-from container.basket import Basket
-from logic.shop_assistance import ShopAssistance
+from entity.chrysanthemum import Chrysanthemum
+from entity.gerbera import Gerbera
+from entity.rose import Rose
+from entity.alstroemeria import Alstroemeria
+from entity.gypsophila import Gypsophila
+from container.bouquet import Bouquet
+from logic.shop_flower import ShopFlower
 
 
 def main():
-    basket = Basket()
-    br = Bread("white", "second", 3.0)
-    o = Orange(200, 300, 1.5)
-    m = Milk(1, 4.2, 5.5)
+    bouquet = Bouquet()
 
-    basket.add(br)
-    basket.add(o)
-    basket.add(m)
+    r = Rose("Pink", 55.0, 3.0)
+    gerb = Gerbera("Yellow", 35.0, 6.0)
+    chr = Chrysanthemum("Green", 30.0, 6.5)
+    alst = Alstroemeria("Pink", 25.0, 8.5)
+    gyp = Gypsophila("White", 10.0, 7.5)
 
-    # print(f"size = {basket.size}")
+    bouquet.add(r)
+    bouquet.add(gerb)
+    bouquet.add(chr)
+    bouquet.add(alst)
+    bouquet.add(gyp)
 
-    print(basket)
+    print(bouquet)
 
-    total = ShopAssistance.calculate_total_price(Basket)
+    total_weight = ShopFlower.calculate_total_weight(bouquet)
+    total_price = ShopFlower.calculate_total_price(bouquet)
+    max.value = ShopFlower.get_max_value(bouquet)
+    min.value = ShopFlower.get_min_value(bouquet)
 
-    # for i in range(basket.size):
-    #     print(basket.get_product(i))
-    # #
-    # print(br)
-    # print(o)
-    # print(m)
-
+    print(f"Total weight bouquet is {total_weight} gramm")
+    print(f"Total price bouquet is {total_price} BYN")
+    print(f"The most expensive flower is {max.value} BYN")
+    print(f"The cheapest flower is {min.value} BYN")
 
 if __name__ == "__main__":
     main()
