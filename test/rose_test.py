@@ -1,13 +1,22 @@
 # Version 1.0
 # Author: Pronkevich Alexandra
 # Group: QA2022
-# Date: 28.05.2023
+# Date: 03.06.2023
 
 import unittest
 from entity.rose import Rose
 
 
 class RoseTest(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rose = Rose()
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.rose
+
     def test_rose_default_constructor(self):
         rose = Rose()
         expected_color = "white"
@@ -18,55 +27,40 @@ class RoseTest(unittest.TestCase):
         self.assertEqual(expected_weight, rose.weight)
         self.assertEqual(expected_price, rose.price)
 
-    def test_negative_rose_diameter(self):
-        weight = -200
-        eexpected = 1000
+    def test_negative_rose_weight(self):
+        weight = -20
+        expected = 1
 
         rose = Rose(weight=weight)
 
         self.assertEqual(expected, rose.weight)
 
-    # def test_negative_orange_cost(self):
-    #     price = -200
-    #     expected = 0
-    #
-    #     orange = Orange(cost=price)
-    #
-    #     self.assertEqual(expected, orange.price)
+    def test_negative_rose_price(self):
+        price = -6
+        expected = 0
 
-    def test_diameter_property_negative(self):
-        orange = Orange()
-        expected = orange.diameter
-        orange.diameter = -200
-        self.assertEqual(expected, orange.diameter)
+        rose = Rose(price=price)
 
-    def test_diameter_property_positive(self):
-        orange = Orange()
-        expected = 200
-        orange.diameter = 200
-        self.assertEqual(expected, orange.diameter)
+        self.assertEqual(expected, rose.price)
 
-    def test_diameter_property_zero(self):
-        orange = Orange()
-        expected = orange.diameter
-        orange.diameter = 0
-        self.assertEqual(expected, orange.diameter)
+    def test_weight_property_positive(self):
+        rose = Rose()
+        expected = 50
+        rose.weight = 50
+        self.assertEqual(expected, rose.weight)
 
-    def test_vitamin_property_negative(self):
-        orange = Orange()
-        expected = orange.vitamin
-        orange.vitamin = -200
-        self.assertEqual(expected, orange.vitamin)
+    def test_weight_property_zero(self):
+        rose = Rose()
+        expected = rose.weight
+        rose.weight = 0
+        self.assertEqual(expected, rose.weight)
 
-    def test_vitamin_property_positive(self):
-        orange = Orange()
-        expected = 200
-        orange.vitamin = 200
-        self.assertEqual(expected, orange.vitamin)
+    def test_price_property_positive(self):
+        rose = Rose()
+        expected = 4
+        rose.price = 4
+        self.assertEqual(expected, rose.price)
 
-    def test_vitamin_property_zero(self):
-        orange = Orange()
-        expected = orange.vitamin
-        orange.vitamin = 0
-        self.assertEqual(expected, orange.vitamin)
 
+if __name__ == "__main__":
+    unittest.main()

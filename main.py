@@ -26,13 +26,13 @@ def main():
 
     total_weight = ShopFlower.calculate_total_weight(bouquet)
     total_price = ShopFlower.calculate_total_price(bouquet)
-    max.value = ShopFlower.get_max_value(bouquet)
-    min.value = ShopFlower.get_min_value(bouquet)
+    # max.price = ShopFlower.get_max_price(bouquet)
+    # min.price = ShopFlower.get_min_price(bouquet)
 
     print(f"Total weight bouquet is {total_weight} gramm")
     print(f"Total price bouquet is {total_price} BYN")
-    print(f"The most expensive flower is {max.value} BYN")
-    print(f"The cheapest flower is {min.value} BYN")
+    # print(f"The most expensive flower is {max.price} BYN")
+    # print(f"The cheapest flower is {min.price} BYN")
 
 if __name__ == "__main__":
     main()
