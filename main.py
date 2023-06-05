@@ -1,9 +1,3 @@
-# Version 1.0
-# Author: Pronkevich Alexandra
-# Group: QA2022
-# Date: 02.06.2023
-
-
 from entity.chrysanthemum import Chrysanthemum
 from entity.gerbera import Gerbera
 from entity.rose import Rose
@@ -39,7 +33,6 @@ def main():
     print(f"Total price bouquet is {total_price} BYN")
     # print(f"The most expensive flower is {max.price} BYN")
     # print(f"The cheapest flower is {min.price} BYN")
-
 
 if __name__ == "__main__":
     main()
