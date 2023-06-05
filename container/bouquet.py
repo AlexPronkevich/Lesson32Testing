@@ -1,3 +1,9 @@
+# Version 1.0
+# Author: Pronkevich Alexandra
+# Group: QA2022
+# Date: 02.06.2023
+
+
 from entity.flower import Flower
 
 
