@@ -1,7 +1,7 @@
 # Version 1.0
 # Author: Pronkevich Alexandra
 # Group: QA2022
-# Date: 02.06.2023
+# Date: 03.06.2023
 
 import unittest
 from entity.alstroemeria import Alstroemeria
